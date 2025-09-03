@@ -154,9 +154,8 @@ const Header = () => {
                   
                   {/* Desktop: Center Logo & Text */}
                   <a href="#home" className="flex items-center gap-3">
-                    <img src={bangzenLogo} alt="Bangzen Logo" className="h-12 w-12" />
                     <div className="block">
-                      <h1 className="font-moderniz text-base text-[#00ffdc]">Zain Ahmad Fahrezi</h1>
+                      <h1 className="font-moderniz text-base text-[#00ffdc]">Rheiga Ruhul Qudus</h1>
                       <p className="font-moderniz text-[10px] text-[#000754]" style={{ textShadow: '0.5px 0.5px 0 #00ffdc, -0.5px -0.5px 0 #00ffdc, 0.5px -0.5px 0 #00ffdc, -0.5px 0.5px 0 #00ffdc' }}>
                         Let's see the awesome Experience
                       </p>

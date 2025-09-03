@@ -13,7 +13,7 @@ export const useAdmin = () => {
 // Admin credentials (In production, this should be handled by a backend)
 const ADMIN_CREDENTIALS = {
   username: 'admin',
-  password: 'zain2024@admin', // Strong password for admin
+  password: 'rega2024@admin', // Strong password for admin
   sessionDuration: 30 * 60 * 1000 // 30 minutes in milliseconds
 };
 

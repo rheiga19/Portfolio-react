@@ -3,11 +3,15 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   FaExternalLinkAlt, FaReact, FaNodeJs, FaHtml5, FaCss3Alt, 
-  FaJsSquare, FaTools, FaFigma, FaGithub, FaTimes, FaDownload
+  FaJsSquare, FaTools, FaFigma, FaGithub, FaTimes, FaDownload,
+  FaLaravel,
+  FaDocker
 } from 'react-icons/fa';
 import { 
   SiTailwindcss, SiNextdotjs, SiVercel, SiMongodb, 
-  SiExpress, SiPostgresql 
+  SiExpress, SiPostgresql, 
+  SiMysql,
+  SiSqlite
 } from 'react-icons/si';
 import { PiCodeBold } from "react-icons/pi";
 import { LuBadge } from "react-icons/lu";
@@ -22,7 +26,7 @@ const dummyProjects = [
     title: "Portfolio v2",
     description: "Website portofolio pribadi yang dibangun dengan React, Next.js, dan Tailwind CSS, di-deploy di Vercel.",
     tech: ["Next.js", "React", "TailwindCSS", "Framer Motion"],
-    link: "https://github.com/username/portfolio",
+    link: "#",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
     category: "Web/Apps",
   },
@@ -30,7 +34,7 @@ const dummyProjects = [
     title: "E-Commerce API",
     description: "RESTful API untuk platform e-commerce dengan fitur otentikasi, manajemen produk, dan transaksi.",
     tech: ["Node.js", "Express", "MongoDB", "JWT"],
-    link: "https://github.com/username/ecommerce-api",
+    link: "#",
     image: "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=2072&auto=format&fit=crop",
     category: "Web/Apps",
   },
@@ -48,7 +52,7 @@ const dummyProjects = [
     tech: ["Spline", "Blender"],
     link: "#",
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop",
-    category: "3D Design",
+    category: "Design UI/UX",
   },
   {
     title: "Animated 3D Landing",
@@ -56,105 +60,21 @@ const dummyProjects = [
     tech: ["Spline", "Three.js"],
     link: "#",
     image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=2070&auto=format&fit=crop",
-    category: "3D Design",
+    category: "DevOps",
   },
 ];
 
 // ===================================
-// DATA SERTIFIKAT ZAIN AHMAD FAHREZI
+// DATA SERTIFIKAT RHEIGA RUHUL QUDUS
 // ===================================
 const userCertificates = [
-    {
-        title: "Belajar Membuat Aplikasi Web dengan React",
-        issuer: "Dicoding Indonesia",
-        date: "Des 2024",
-        link: "/certificates/Belajar Membuat Aplikasi Web dengan React.pdf",
-        image: "/certificate-images/Belajar Membuat Aplikasi Web dengan React.jpg",
-    },
-    {
-        title: "Belajar Dasar Pemrograman JavaScript",
-        issuer: "Dicoding Indonesia",
-        date: "Des 2024",
-        link: "/certificates/Belajar Dasar Pemrograman JavaScript.pdf",
-        image: "/certificate-images/Belajar Dasar Pemrograman JavaScript.jpg",
-    },
-    {
-        title: "Junior Web Developer (BNSP)",
-        issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
-        date: "Sep 2024",
-        link: "/certificates/SERTIFIKAT BNSP JUNIOR WEB DEVELOPER ZAIN AHMAD FAHREZI.jpeg",
-        image: "/certificate-images/SERTIFIKAT BNSP JUNIOR WEB DEVELOPER ZAIN AHMAD FAHREZI.jpg",
-    },
-    {
-        title: "Belajar Membuat Front-End Web untuk Pemula",
-        issuer: "Dicoding Indonesia",
-        date: "Des 2024",
-        link: "/certificates/Belajar Membuat Front-End Web untuk Pemula.pdf",
-        image: "/certificate-images/Belajar Membuat Front-End Web untuk Pemula.jpg",
-    },
-    {
-        title: "Operator Komputer Madya (BNSP)",
-        issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
-        date: "Des 2024",
-        link: "/certificates/Operator Komputer Madya BNSP.jpeg",
-        image: "/certificate-images/Operator Komputer Madya BNSP.jpg",
-    },
-    {
-        title: "Belajar Dasar Data Science",
-        issuer: "Dicoding Indonesia",
-        date: "Okt 2024",
-        link: "/certificates/Belajar Dasar Data Science.pdf",
-        image: "/certificate-images/Belajar Dasar Data Science.jpg",
-    },
-    {
-        title: "Belajar Dasar Structured Query Language (SQL)",
-        issuer: "Dicoding Indonesia",
-        date: "Okt 2024",
-        link: "/certificates/Belajar Dasar Structured Query Language (SQL).pdf",
-        image: "/certificate-images/Belajar Dasar Structured Query Language (SQL).jpg",
-    },
-    {
-        title: "Belajar Dasar AI",
-        issuer: "Dicoding Indonesia",
-        date: "Sep 2024",
-        link: "/certificates/Belajar Dasar AI.pdf",
-        image: "/certificate-images/Belajar Dasar AI.jpg",
-    },
-    {
-        title: "Belajar Dasar Manajemen Proyek",
-        issuer: "Dicoding Indonesia",
-        date: "Sep 2024",
-        link: "/certificates/Belajar Dasar Manajemen Proyek.pdf",
-        image: "/certificate-images/Belajar Dasar Manajemen Proyek.jpg",
-    },
-    {
-        title: "Operator Komputer Madya (VSGA)",
-        issuer: "Digital Talent Scholarship",
-        date: "Agu 2024",
-        link: "/certificates/Operator Komputer Madya VSGA.pdf",
-        image: "/certificate-images/Operator Komputer Madya VSGA.jpg",
-    },
-    {
-        title: "Junior Web Developer (VSGA)",
-        issuer: "Kominfo",
-        date: "Jul 2024",
-        link: "/certificates/Junior Web Developer VSGA.pdf",
-        image: "/certificate-images/Junior Web Developer VSGA.jpg",
-    },
-    {
-        title: "Java Fundamentals",
-        issuer: "Oracle",
-        date: "Jun 2024",
-        link: "/certificates/JAVA FUNDAMENTALS.pdf",
-        image: "/certificate-images/JAVA FUNDAMENTALS.jpg",
-    },
-    {
-        title: "Belajar Dasar Pemrograman Web",
-        issuer: "Dicoding Indonesia",
-        date: "Nov 2023",
-        link: "/certificates/Belajar Dasar Pemrograman Web.pdf",
-        image: "/certificate-images/Belajar Dasar Pemrograman Web.jpg",
-    },
+    // {
+    //     title: "Paklaring",
+    //     issuer: "PT Citra Jelajah Informatika",
+    //     date: "Mei 2025",
+    //     link: "#",
+    //     image: "/certificate-images/Belajar Membuat Aplikasi Web dengan React.jpg",
+    // },
 ];
 
 const techStack = {
@@ -163,21 +83,22 @@ const techStack = {
     { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
     { name: "JavaScript", icon: <FaJsSquare className="text-[#F7DF1E]" /> },
     { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#38B2AC]" /> },
-    { name: "HTML5", icon: <FaHtml5 className="text-[#E34F26]" /> },
-    { name: "CSS3", icon: <FaCss3Alt className="text-[#1572B6]" /> },
   ],
   backend: [
     { name: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
     { name: "Express", icon: <SiExpress className="text-white" /> },
+    { name: "Laravel", icon: <FaLaravel className="text-[#777BB4]" /> },
   ],
   database: [
-    { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
     { name: "PostgreSQL", icon: <SiPostgresql className="text-[#336791]" /> },
+    { name: "MySQL", icon: <SiMysql className="text-[#4479A1]" /> },
+    { name: "SQLite", icon: <SiSqlite className="text-[#003B57]" /> },
   ],
   tools: [
     { name: "Git & GitHub", icon: <FaGithub className="text-white" /> },
     { name: "Vercel", icon: <SiVercel className="text-white" /> },
     { name: "Figma", icon: <FaFigma className="text-[#F24E1E]" /> },
+    { name: "docker", icon: <FaDocker className="text-gray-400" /> },
     { name: "Tools Lain", icon: <FaTools className="text-gray-400" /> },
   ],
 };
@@ -463,7 +384,8 @@ function ProjectSection() {
                 <>
                   <div className="flex justify-center gap-4 mb-8">
                     <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === 'Web/Apps' ? 'bg-cyan-700/80 text-white border-cyan-400 shadow-cyan-500/10 shadow-lg' : 'bg-slate-900/60 text-cyan-200 border-slate-700 hover:bg-cyan-800/40 hover:text-white'}`} onClick={() => setProjectCategory('Web/Apps')}>Web/Apps</button>
-                    <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === '3D Design' ? 'bg-cyan-700/80 text-white border-cyan-400 shadow-cyan-500/10 shadow-lg' : 'bg-slate-900/60 text-cyan-200 border-slate-700 hover:bg-cyan-800/40 hover:text-white'}`} onClick={() => setProjectCategory('3D Design')}>3D Design</button>
+                    <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === 'Design UI/UX' ? 'bg-cyan-700/80 text-white border-cyan-400 shadow-cyan-500/10 shadow-lg' : 'bg-slate-900/60 text-cyan-200 border-slate-700 hover:bg-cyan-800/40 hover:text-white'}`} onClick={() => setProjectCategory('3D Design')}>Design UI/UX</button>
+                    <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === 'DevOps' ? 'bg-cyan-700/80 text-white border-cyan-400 shadow-cyan-500/10 shadow-lg' : 'bg-slate-900/60 text-cyan-200 border-slate-700 hover:bg-cyan-800/40 hover:text-white'}`} onClick={() => setProjectCategory('3D Design')}>DevOps</button>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredProjects.length > 0 ? (
