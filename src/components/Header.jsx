@@ -132,7 +132,7 @@ const Header = () => {
                   <a href="#home" className="flex items-center gap-3">
                     <img src={bangzenLogo} alt="Bangzen Logo" className="h-12 w-12 flex-shrink-0" />
                     <div>
-                      <h1 className="font-moderniz text-sm text-[#00ffdc] whitespace-nowrap">Zain Ahmad Fahrezi</h1>
+                      <h1 className="font-moderniz text-sm text-[#00ffdc] whitespace-nowrap">RHEIGA RUHUL QUDUS</h1>
                       <p className="font-moderniz text-[9px] text-[#000754]" style={{ textShadow: '0.5px 0.5px 0 #00ffdc, -0.5px -0.5px 0 #00ffdc, 0.5px -0.5px 0 #00ffdc, -0.5px 0.5px 0 #00ffdc' }}>
                         Let's see the awesome Experience
                       </p>

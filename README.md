@@ -77,5 +77,5 @@ Your support mePayns a lot and helps me continue building open-source projects. 
 ## 🌐 Social Media
 
 * 💼 [LinkedIn](https://www.linkedin.com/in/rheiga-ruhul-qudus)
-* 📸 Instagram: [@zain.ahmadf](https://www.instagram.com/rheiga.rq_19)
-* 🎥 TikTok: [@zainahmad.f](https://www.tiktok.com/@erhei19)
+* 📸 Instagram: [@rheiga.rq_19](https://www.instagram.com/rheiga.rq_19)
+* 🎥 TikTok: [@erhei19](https://www.tiktok.com/@erhei19)
